@@ -6,12 +6,11 @@ def parse_args() -> argparse.Namespace:
         prog="ppbot"
     )
 
-    parser.add_argument("-p", type=bool, default=False)
+    parser.add_argument("--key", type=str, default="")
 
     return parser.parse_args()
 
 def main():
-    namespace = parse_args()
-    print(namespace.p)
+    args = parse_args()
 
-    run_bot()
+    run_bot(args.key)
